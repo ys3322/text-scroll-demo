@@ -1,0 +1,12 @@
+/* @import url('./common.scss');
+
+@import url('./icons.scss');
+@import url('./variables.scss'); */
+
+$primary-color: tomato;
+
+@mixin flex {
+  display: flex;
+  align-items: center;
+}
+
