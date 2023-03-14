@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import TextScroll from "./textScroll.vue";
+import TextScroll from "../../components/TextScroll.vue";
 
 export default {
   components: {

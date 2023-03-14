@@ -34,6 +34,7 @@ export default {
       startDistance: 200,
       // 滚动元素 left属性值
       left: 0,
+
       //当前滚动项 下标
       activeIndex: 0,
       // 文本详情
@@ -112,7 +113,7 @@ export default {
       let index = this.activeIndex;
       this.left = this.startDistance;
 
-      // 2. 定时器改变left 使文字移动
+      // 2. 改变left 使文字移动
       this.intervalTimer = setInterval(() => {
         this.left -= 1;
         // 文字左滚动的距离 大于 元素的大小
@@ -156,6 +157,7 @@ export default {
 
 .temp-texts {
   position: fixed;
+  left: -9999px;
   z-index: 999;
   visibility: hidden;
   .text {

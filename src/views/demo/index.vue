@@ -1,15 +1,15 @@
 <template>
   <div class="demo">
     <h2>demo</h2>
-    <newsScroll :texts="texts"></newsScroll>
+    <TextScroll :texts="texts"></TextScroll>
   </div>
 </template>
 <script>
-import newsScroll from "../../components/newsScroll.vue";
+import TextScroll from "../../components/TextScroll.vue";
 
 export default {
   components: {
-    newsScroll,
+    TextScroll,
   },
   data() {
     return {
