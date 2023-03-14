@@ -45,7 +45,7 @@ export default {
     scrollDOMStyle() {
       return {
         left: `${this.left}px`,
-        width: `${this.textDetails[this.activeIndex]?.width ?? 0}px`,
+        // width: `${this.textDetails[this.activeIndex]?.width ?? 0}px`,
       };
     },
 
@@ -91,10 +91,10 @@ export default {
       this.$nextTick(() => {
         // 计算文本的显示宽度
         const textRefs = this.$refs?.textRef ?? [];
-        textRefs.forEach((item) => {
+        textRefs.forEach((item,index) => {
           const width = item.getBoundingClientRect().width;
           this.textDetails.push({
-            text: item.innerHTML,
+            text: this.texts[index],
             width,
           });
         });
@@ -102,9 +102,10 @@ export default {
         // console.log("yangs=> initTextData...", textRefs, this.textDetails);
 
         const rightScrollRef = this.$refs.rightScrollRef;
+        // 右侧开始滚动的位置
         this.startDistance =
           rightScrollRef.getBoundingClientRect()?.width ?? 1056;
-          // console.log('yangs=> ',rightScrollRef,this.startDistance);
+        // console.log('yangs=> ',rightScrollRef,this.startDistance);
       });
     },
 
@@ -149,6 +150,7 @@ export default {
   overflow: hidden;
   .scroll {
     // width: 9999px;
+    width: max-content;
     position: absolute;
     left: 0;
     top: 0;
